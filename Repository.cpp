@@ -10,11 +10,12 @@ Repository::Repository()
 {
 	this->size = 0;
 
+
 }
 //Descr: creaza un repo
 //In: size, v
 //Out:  instanta (cu info) a unui repo
-Repository::Repository(int, Cheltuiala)
+Repository::Repository(int, Cheltuieli)
 {
 	this->size = size;
 
@@ -42,7 +43,7 @@ Repository::Repository(const Repository &c)
 //Out: - (destructor)
 Repository::~Repository()
 {
-	this->size = 0;
+
 }
 //Descr: creaza un noi repo (egal cu un repo c dat)
 //Out: un noi repo (egal cu c)
@@ -78,10 +79,10 @@ int Repository::getSize()
 	return this->size;
 }
 
-Cheltuiala* Repository::getAll()
+Cheltuieli* Repository::getAll()
 {
 	int i = 0;
-	Cheltuiala* lista = new Cheltuiala[size];
+	Cheltuieli* lista = new Cheltuieli[size];
 	for (i; i < size; i++)
 	{
 		lista[i] = v[i];
@@ -89,12 +90,12 @@ Cheltuiala* Repository::getAll()
 	return lista;
 }
 //adaugare element
-void Repository::addElem(Cheltuiala &c)
+void Repository::addElem(Cheltuieli &c)
 {
 
 	if (size == 50)
 	{
-		cout << "lista are numar maxim de cheltuieli" << endl;
+		cout << "v are nr max de conturi" << endl;
 	}
 	else
 	{
@@ -106,36 +107,32 @@ void Repository::addElem(Cheltuiala &c)
 
 
 //inlocuieste 
-void Repository::updateCheltuieli(Cheltuiala c)
+void Repository::updateCheltuieli(Cheltuieli c)
 {
-	int suma, ziua,luna;
-	char* tip;
-	//char* luna;
+	int suma, ziua;
+	string tip;
 	ziua = c.getZiua();
 	suma = c.getSuma();
 	tip = c.getTip();
-	luna = c.getLuna();
 	for (int i = 0; i < this->size; i++)
 	{
 		if (this->v[i].getZiua() == c.getZiua())
 		{
 			this->v[i].setZiua(ziua);
-			this->v[i].setLuna(luna);
-			this->v[i].setTip(tip);
 			this->v[i].setSuma(suma);
-			
+			this->v[i].setTip(tip);
 		}
 	}
 }
 
 //returneaza lista
-Cheltuiala* Repository::getLista()
+Cheltuieli* Repository::getLista()
 {
 	return this->v;
 }
 
 //seteaza o lista
-void Repository::setLista(Cheltuiala* list)
+void Repository::setLista(Cheltuieli* list)
 {
 	for (int i = 0; i < this->size; i++)
 	{

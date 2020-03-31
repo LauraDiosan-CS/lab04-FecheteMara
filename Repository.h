@@ -1,26 +1,25 @@
 #pragma once
-#include"Cheltuiala.h"
+#include"Cheltuieli.h"
 class Repository
 {
 private:
 	int size;
-	Cheltuiala v[100];
+	Cheltuieli v[100];
 public:
 	Repository();
-	Repository(int, Cheltuiala);
+	Repository(int, Cheltuieli);
 	Repository(const Repository &c);
 	~Repository();
 	Repository& operator=(const Repository &c);
 	void setSize(int setSize);
 	int getSize();
+	
+	Cheltuieli* getAll();
+	void addElem(Cheltuieli &c);
 
-	Cheltuiala* getAll();
-	void addElem(Cheltuiala &c);
-
-	void updateCheltuieli(Cheltuiala c);
-	Cheltuiala* getLista();
-	void setLista(Cheltuiala* list);
-
+	void updateCheltuieli(Cheltuieli c);
+	Cheltuieli* getLista();
+	void setLista(Cheltuieli* list);
 
 };
 
